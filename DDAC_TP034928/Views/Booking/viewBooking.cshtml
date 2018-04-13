@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DDAC_TP034928.Models.Booking>
+
+@{
+    ViewBag.Title = "viewBooking";
+}
+
+<h2>Booking</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerData.customerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargoWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.scheduleData.origin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.scheduleData.destination)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerData.customerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargoWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.scheduleData.origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.scheduleData.destination)
+        </td>
+
+    </tr>
+    }
+
+
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
